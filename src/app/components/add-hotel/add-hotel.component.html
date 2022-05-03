@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-6 border p-5 m-5 rounded shadow ">
+            <form [formGroup]="addHotel" (ngSubmit)="onSubmit()">
+                <p class="h4 text-center mb-5">Add Image Hotel</p>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Url image</label>
+                  <input [(ngModel)]="photo" formControlName="photo" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter photo...">
+                </div>
+                <button [disabled]="!addHotel.valid" type="submit" class="btn btn-primary btn-lg btn-block">Add</button>
+            </form>
+        </div>
+    </div>
+</div>

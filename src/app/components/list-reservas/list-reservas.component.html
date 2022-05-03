@@ -1,0 +1,21 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-8 offset-2 mt-5 mb-3">
+            <input (change)="buscarReserva( $event )" [(ngModel)]="textoInput" formControlName="texto" type="text" class="form-control" id="photo" aria-describedby="emailHelp" placeholder="Search...">
+        </div>
+
+        <div *ngFor="let reserva of reservas | search:textoBuscar" class="col-8 offset-2 mr-0">
+            <div class="mb-3 d-flex justify-content-around align-items-center">
+                <div class="d-flex  rounded justify-content-around border align-self-center w-100" style="background-color: #B6BCF8;">
+                    <p class="pt-3 font-weight-bold text-white">{{reserva.email}}</p>
+                    <p class="pt-3 font-weight-bold text-white">{{reserva.entrada | date:'dd/MM/yyyy'}} - {{reserva.salida | date:'dd/MM/yyyy'}}</p>
+                    <p class="pt-3 font-weight-bold text-white">{{reserva.telefono}}</p>
+                    <p class="pt-3 font-weight-bold text-white">{{reserva.totalDinero | currency:'EUR'}}</p>
+                </div>
+                <div class="w-25">
+                    <button (click)="deleteReserva(reserva.id)" class="btn btn-danger w-100 h-100 p-3">DELETE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

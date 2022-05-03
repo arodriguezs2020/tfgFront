@@ -1,0 +1,15 @@
+<div class="container mt-5">
+    <div *ngFor="let habitacion of habitaciones" class="row align-items-center justify-content-center mb-5">
+        <div class="col-6">
+            <div>
+                <img class="img-fluid rounded img-thumbnail shadow-lg" src="{{habitacion.photo}}" alt="">
+            </div>
+        </div>
+        <div class="col-3">
+            <h3>{{habitacion.nombre}} - <small>{{habitacion.huespedes}}</small></h3>
+            <p>{{habitacion.descripcion}}</p>
+            <h5>{{habitacion.precio}} €</h5>
+            <button [routerLink]="['/reserva', habitacion.id]" class="btn btn-info mt-2">SELECCIONAR</button>
+        </div>
+    </div>
+</div>

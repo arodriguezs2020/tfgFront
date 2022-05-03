@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-6 border p-5 m-5 rounded shadow ">
+            <form [formGroup]="registro" (ngSubmit)="onSubmit()">
+                <p class="h4 text-center mb-5">Log up to your account</p>
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input [(ngModel)]="username" formControlName="username" type="email" class="form-control" id="username" aria-describedby="username" placeholder="Enter username">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input [(ngModel)]="email" formControlName="email" type="email" class="form-control" id="email" aria-describedby="email" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone number</label>
+                    <input [(ngModel)]="telefono" formControlName="telefono" type="tel" class="form-control" id="phone" aria-describedby="phone" placeholder="Enter phone number">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input [(ngModel)]="password" formControlName="password" type="password" class="form-control" id="password" placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <label for="repeatpassword">Repeat Password</label>
+                    <input [(ngModel)]="repeatpassword" formControlName="repeatpassword" type="password" class="form-control" id="repeatpassword" placeholder="Repeat Password">
+                </div>
+                <div class="form-check mb-3">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Acepto las condiciones de uso</label>
+                </div>
+                <button [disabled]="!registro.valid" type="submit" class="btn btn-success btn-lg btn-block">Sign Up</button>
+            </form>
+        </div>
+    </div>
+</div>
